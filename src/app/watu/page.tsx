@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Bot } from "lucide-react";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
@@ -40,6 +39,48 @@ function ChatMockup() {
         <div className="flex-1 space-y-2 p-4">
           <div className="max-w-[80%] rounded-xl border border-[var(--border)] bg-[var(--bg-alt)] px-3 py-2 text-[11px] text-[var(--text-muted)]">Hi, I&apos;d like to know about pricing.</div>
           <div className="ml-auto max-w-[80%] rounded-xl bg-[var(--accent)] px-3 py-2 text-[11px] text-white">Sure! Sending our plans now.</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function AutomationsDashboardMockup() {
+  const rows = [
+    { name: "Welcome Message", desc: "Auto-reply to first-time contacts with a greeting.", tag: "First Message from Contact" },
+    { name: "Lead Qualifier", desc: "Ask qualification questions to filter inbound leads.", tag: "Keyword Match" },
+    { name: "Follow-up Reminder", desc: "Send a nudge if a contact has not replied within 24 hours.", tag: "New Message" },
+  ];
+  return (
+    <div className="flex w-full overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--card)] shadow-[var(--shadow-lg)]">
+      <div className="hidden w-[180px] shrink-0 border-r border-[var(--border)] bg-[var(--bg-alt)] p-4 sm:block">
+        <div className="mb-5 flex items-center gap-2">
+          <span className="flex size-6 items-center justify-center rounded-md bg-gradient-to-br from-[var(--accent)] to-[var(--coral)] text-[11px] font-extrabold text-white">W</span>
+          <span className="text-xs font-bold">WATU</span>
+        </div>
+        {["Inbox", "Contacts", "Pipelines", "Broadcasts", "Automations", "AI Agents"].map((r) => (
+          <div key={r} className={`mb-1 rounded-md px-2.5 py-2 text-[11px] font-semibold ${r === "Automations" ? "bg-[var(--accent)]/14 text-[var(--accent)]" : "text-[var(--text-muted)]"}`}>{r}</div>
+        ))}
+      </div>
+      <div className="flex-1 p-6">
+        <div className="mb-5 flex items-center justify-between">
+          <div>
+            <div className="text-lg font-bold">Automations</div>
+            <div className="text-xs text-[var(--text-muted)]">Build workflows that react to WhatsApp events automatically.</div>
+          </div>
+          <span className="rounded-lg bg-[var(--accent)] px-3 py-2 text-xs font-bold text-white">+ Create Automation</span>
+        </div>
+        <div className="space-y-3">
+          {rows.map((r) => (
+            <div key={r.name} className="flex items-center justify-between rounded-xl border border-[var(--border)] p-3.5">
+              <div>
+                <div className="mb-1 text-[13px] font-bold">{r.name}</div>
+                <div className="mb-1.5 text-[11.5px] text-[var(--text-muted)]">{r.desc}</div>
+                <span className="rounded-full bg-[var(--bg-alt)] px-2 py-0.5 text-[10px] font-semibold text-[var(--text-muted)]">{r.tag}</span>
+              </div>
+              <span className="flex h-5 w-9 items-center rounded-full bg-[var(--accent)] p-0.5"><span className="size-4 rounded-full bg-white" /></span>
+            </div>
+          ))}
         </div>
       </div>
     </div>
@@ -141,11 +182,19 @@ const FEATURE_TABS = [
     body: "Send an approved WhatsApp template to a segmented list, at scale, and watch delivery in real time, no more forwarding a message to a hundred people one at a time.",
     cta: "Explore broadcasts",
     visual: (
-      <div className="relative w-full overflow-hidden rounded-xl border border-[var(--border)] shadow-[var(--shadow-lg)]">
-        <Image src="/product/broadcasts.jpg" alt="WATU's real Broadcasts screen" width={1568} height={230} className="w-full" />
-        <span className="absolute right-3 top-3 rounded-full bg-emerald-500 px-2.5 py-1 text-[11px] font-bold text-white shadow-lg">
-          Live delivery tracking
-        </span>
+      <div className="w-full max-w-[400px] rounded-2xl border border-[var(--border)] bg-[var(--card)] p-5 shadow-[var(--shadow-lg)]">
+        <div className="mb-3 flex items-center justify-between text-[11px] font-bold text-[var(--text-muted)]">
+          <span>Diwali Offer — Template</span>
+          <span className="rounded-full bg-emerald-500/15 px-2 py-0.5 text-emerald-600">Sent</span>
+        </div>
+        <div className="grid grid-cols-3 gap-2 text-center">
+          {[["1,204", "Sent"], ["1,180", "Delivered"], ["942", "Read"]].map(([n, l]) => (
+            <div key={l} className="rounded-lg bg-[var(--bg-alt)] py-3">
+              <div className="text-base font-extrabold">{n}</div>
+              <div className="text-[10px] text-[var(--text-muted)]">{l}</div>
+            </div>
+          ))}
+        </div>
       </div>
     ),
   },
@@ -214,24 +263,7 @@ export default function WatuPage() {
           </div>
         </div>
         <div className="relative mx-auto mb-4 max-w-4xl px-6">
-          <Reveal>
-            <div className="relative overflow-hidden rounded-2xl border border-[var(--border)] shadow-[var(--shadow-lg)]">
-              <Image
-                src="/product/automations.jpg"
-                alt="WATU's real Automations screen — build workflows that react to WhatsApp events"
-                width={1568}
-                height={425}
-                className="w-full"
-                priority
-              />
-              <div className="pointer-events-none absolute inset-0 hidden md:block">
-                <div className="absolute left-[36%] top-[26%] h-9 w-[210px] rounded-lg border-2 border-[var(--accent)]" />
-                <div className="absolute left-[36%] top-[38%] flex items-center gap-1.5 rounded-full bg-[var(--accent)] px-3 py-1.5 text-xs font-bold text-white shadow-lg">
-                  Zero-code, on by default
-                </div>
-              </div>
-            </div>
-          </Reveal>
+          <Reveal><AutomationsDashboardMockup /></Reveal>
         </div>
       </section>
 
