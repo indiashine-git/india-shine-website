@@ -46,9 +46,9 @@ const SERVICES = [
 
 const WHY_US = [
   { icon: Globe2, title: "A global client base, a personal working relationship", body: "We work with teams across the US, UK, Sri Lanka, and Brazil, in addition to India. Different time zones, same direct line to the people building your product." },
-  { icon: ShieldCheck, title: "You own your data", body: "Your WhatsApp Business Account stays under your own Meta Business Manager. No black-box reseller sitting between you and your own customer conversations." },
+  { icon: ShieldCheck, title: "You own your data", body: "Your customer conversations and data belong to you. We build the systems that protect them, not hand them off to a black box." },
   { icon: Zap, title: "Fast to ship, fast to fix", body: "Small team, direct line to the people building the product. Feature requests and bugs don't disappear into a backlog for a quarter." },
-  { icon: Layers, title: "No lock-in, ever", body: "No shared reseller account. Your data and your WhatsApp number stay under your own Meta Business Manager, not a pooled account we could shut off." },
+  { icon: Layers, title: "No lock-in, ever", body: "Your number, your data, your customers. We build systems that work for you, not ones that trap you." },
   { icon: Headset, title: "Direct support, not a ticket queue", body: "You reach a person who can actually make a change, not a first-line responder reading from a script." },
   { icon: Rocket, title: "We use what we build", body: "Our own team runs on the same products we sell you. If it's not good enough for us, it's not good enough to ship." },
 ];
@@ -160,8 +160,8 @@ export default function Home() {
         <PhotoStats
           stats={[
             { src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop", alt: "Team working together", num: "5", label: "Countries we actively support" },
-            { src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop", alt: "Team meeting", num: "0", label: "Third parties between you and your customers" },
-            { src: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop", alt: "Close up of code on laptop", num: "100%", label: "Direct Meta Cloud API, no reseller" },
+            { src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop", alt: "Team meeting", num: "0", label: "Conversations lost between your team" },
+            { src: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop", alt: "Close up of code on laptop", num: "100%", label: "Built and run by our own team" },
           ]}
         />
       </div>
@@ -205,7 +205,7 @@ export default function Home() {
               <div>
                 <h3 className="mb-1.5 text-lg font-bold">WATU — WhatsApp CRM</h3>
                 <p className="mb-3.5 text-[14.5px] text-[var(--text-muted)]">
-                  A WhatsApp CRM built on Meta&apos;s official Cloud API: shared inbox, contacts, sales pipelines,
+                  A WhatsApp CRM built for your team and your customers: shared inbox, contacts, sales pipelines,
                   broadcasts, no-code automations, and AI agents.
                 </p>
                 <div className="flex flex-wrap gap-2">

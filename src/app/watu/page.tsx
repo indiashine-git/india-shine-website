@@ -11,7 +11,7 @@ import { FeatureSpotlight } from "@/components/feature-spotlight";
 export const metadata: Metadata = {
   title: "WATU — WhatsApp CRM by India-Shine",
   description:
-    "WATU is a WhatsApp CRM built on Meta's official Cloud API — shared inbox, contacts, pipelines, broadcasts, automations and AI agents, with your WhatsApp Business Account under your own Meta Business Manager.",
+    "WATU is a WhatsApp CRM by India-Shine — shared inbox, contacts, pipelines, broadcasts, automations, and AI agents, built to help your team run WhatsApp like a real business.",
 };
 
 const NAV_LINKS = [
@@ -237,7 +237,7 @@ export default function WatuPage() {
         <div className="pointer-events-none absolute -inset-x-10 -top-40 h-[620px] bg-[image:var(--hero-gradient)] opacity-[0.14] blur-[60px] dark:opacity-[0.28]" />
         <div className="relative mx-auto max-w-4xl px-6">
           <span className="mb-7 inline-block rounded-full bg-[var(--accent)]/12 px-4 py-1.5 text-xs font-bold tracking-wider text-[var(--accent)] uppercase">
-            WhatsApp CRM, built on Meta&apos;s Cloud API
+            WATU by India-Shine
           </span>
           <h1 className="mb-6 text-[42px] font-extrabold leading-[0.98] tracking-tight md:text-7xl lg:text-[76px]">
             Your team&apos;s WhatsApp,
@@ -245,8 +245,8 @@ export default function WatuPage() {
             <span className="gradient-text">run like a real business.</span>
           </h1>
           <p className="mx-auto mb-12 max-w-xl text-lg text-[var(--text-muted)]">
-            WATU turns a single WhatsApp Business number into a shared inbox, a sales pipeline, and an automation
-            engine, connected directly to Meta&apos;s official Cloud API under your own WhatsApp Business Account.
+            WATU turns a single WhatsApp number into a shared inbox, a sales pipeline, and an automation engine, so
+            your whole team works from one place and every customer gets a real answer, fast.
           </p>
           <div className="mb-16 flex flex-wrap justify-center gap-3">
             <a
@@ -270,7 +270,7 @@ export default function WatuPage() {
       <div className="mx-auto max-w-5xl px-6 py-14">
         <Reveal>
           <div className="grid grid-cols-2 gap-6 text-center md:grid-cols-4">
-            {[["1", "Shared inbox for the whole team"], ["0", "Messages routed through a third party"], ["100%", "Meta Cloud API, direct"], ["∞", "Automations you control"]].map(([n, l]) => (
+            {[["1", "Shared inbox for the whole team"], ["0", "Conversations lost between teammates"], ["24/7", "Automations working for you"], ["∞", "Team members, one number"]].map(([n, l]) => (
               <div key={l}>
                 <div className="gradient-text text-4xl font-extrabold md:text-5xl">{n}</div>
                 <div className="mt-2.5 text-[13px] text-[var(--text-muted)]">{l}</div>
@@ -332,7 +332,7 @@ export default function WatuPage() {
         </Reveal>
         <div className="grid gap-8 md:grid-cols-3">
           {[
-            ["Connect your number", "Link an existing WhatsApp Business number through Meta's official Embedded Signup, no manual API wrangling required."],
+            ["Connect your number", "Link your existing WhatsApp number in a few clicks, no technical setup required."],
             ["Invite your team", "Add teammates with roles (admin, agent, or viewer) and everyone sees the same shared inbox from day one."],
             ["Set up your first automation", "Build a reply rule, a pipeline stage, or a broadcast segment, and let the system carry the routine work."],
           ].map(([title, body], i) => (
@@ -348,7 +348,7 @@ export default function WatuPage() {
       <section className="mx-auto max-w-6xl px-6 py-28">
         <Reveal className="mx-auto mb-16 max-w-xl text-center">
           <h2 className="mb-3.5 text-3xl font-extrabold tracking-tight md:text-[44px]">Your customers are on WhatsApp. WATU is how you run it like a business.</h2>
-          <p className="text-[var(--text-muted)]">Most WhatsApp CRM tools bolt on a generic reseller layer between you and your customers. WATU is the system that makes WhatsApp actually work for your team, end to end.</p>
+          <p className="text-[var(--text-muted)]">Every tool your team needs to sell, support, and follow up, built into one place instead of five different apps.</p>
         </Reveal>
         <Reveal className="grid gap-10 md:grid-cols-2">
           <div>
@@ -356,8 +356,8 @@ export default function WatuPage() {
             <p className="text-[15px] text-[var(--text-muted)]">The inbox, the pipeline, the automations, the broadcasts, the AI agent, all of it is WATU. You don&apos;t stitch together five tools. We built the system so your team just works.</p>
           </div>
           <div>
-            <h3 className="mb-3.5 text-xl font-bold">Built directly on Meta&apos;s Cloud API</h3>
-            <p className="text-[15px] text-[var(--text-muted)]">WATU connects your WhatsApp Business Account straight to Meta, registered under your own Meta Business Manager, not a shared reseller pool. That&apos;s the foundation WATU is engineered on: your number, protected, running on the system we built to make it work.</p>
+            <h3 className="mb-3.5 text-xl font-bold">Built for your customer, not just your team</h3>
+            <p className="text-[15px] text-[var(--text-muted)]">Every reply, every follow-up, every broadcast lands where your customer already is, fast and personal, not buried in a queue. WATU exists to make that experience better for them, every single time.</p>
           </div>
         </Reveal>
       </section>
@@ -368,12 +368,12 @@ export default function WatuPage() {
         </Reveal>
         <div className="divide-y divide-[var(--border)]">
           {[
-            ["Do I need a Meta Business Verified account?", "You need a WhatsApp Business Account on Meta's Cloud API. We walk you through connecting it, whether you already have one set up or are starting fresh."],
-            ["Can my whole team use one WhatsApp number?", "Yes, that's the whole point. WATU gives every teammate their own login while all of them work from the same shared inbox on one WhatsApp Business number."],
-            ["Does WATU store our customers' messages?", "Message data is stored on infrastructure we operate for you, not routed through a third-party reseller's black box. See our Privacy Policy for the full detail."],
-            ["Do I need my own servers to run this?", "No. WATU is a SaaS product, India-Shine operates and maintains all the infrastructure. Your WhatsApp Business Account stays registered under your own Meta Business Manager."],
+            ["Is this hard to set up?", "No. We walk you through connecting your number, and most teams are live the same day."],
+            ["Can my whole team use one WhatsApp number?", "Yes, that's the whole point. WATU gives every teammate their own login while all of them work from the same shared inbox on one number."],
+            ["Is our customer data safe with WATU?", "Yes. Your conversations and customer data are protected end to end, and we never sell your data. See our Privacy Policy for the full detail."],
+            ["Do I need any technical setup on my side?", "No. WATU is fully managed, you just connect your number and start working, nothing to install or maintain."],
             ["How long does setup actually take?", "Most teams are live within a day. Connect your number, invite your team, and you're working from a shared inbox, no weeks-long onboarding."],
-            ["What happens to our existing WhatsApp number?", "You keep it. WATU connects to the number you already use, your customers never see a change, and you don't lose your message history or your quality rating."],
+            ["What happens to our existing WhatsApp number?", "You keep it. Your customers never see a change, and you don't lose your message history or your reputation with them."],
             ["Can I try WATU before committing?", "Yes. Book a discovery call and we'll walk through your actual workflow, then set you up with a working inbox so you can see it running on your own number before you decide anything."],
             ["What does support actually look like?", "You get a direct line to the team that builds WATU, not a ticket queue. Most issues get a real answer the same day."],
           ].map(([q, a]) => (
@@ -413,7 +413,7 @@ export default function WatuPage() {
       </section>
 
       <SiteFooter
-        blurb="WATU is a WhatsApp CRM built on Meta's official Cloud API, operated by India-Shine Business Support Services."
+        blurb="WATU is a WhatsApp CRM by India-Shine Business Support Services, built to help your team run WhatsApp like a real business."
         columns={[
           { heading: "Product", links: [
             { href: "/watu#problem", label: "Why WATU" },
