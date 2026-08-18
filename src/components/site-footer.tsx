@@ -63,6 +63,7 @@ export function SiteFooter({
           <div className="flex gap-5">
             <Link href="/privacy-policy" className="hover:text-[#f4f4f8]">Privacy Policy</Link>
             <Link href="/terms-of-usage" className="hover:text-[#f4f4f8]">Terms of Usage</Link>
+            <Link href="/data-deletion" className="hover:text-[#f4f4f8]">Data Deletion</Link>
           </div>
         </div>
       </div>
