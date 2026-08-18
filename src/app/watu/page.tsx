@@ -7,6 +7,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { Reveal } from "@/components/reveal";
 import { PullQuote } from "@/components/pull-quote";
 import { FeatureSpotlight } from "@/components/feature-spotlight";
+import { HelpScrollRow } from "@/components/help-scroll-row";
 
 export const metadata: Metadata = {
   title: "WATU — WhatsApp CRM by India-Shine",
@@ -414,6 +415,21 @@ export default function WatuPage() {
             <p className="text-[15px] text-[var(--text-muted)]">Every reply, every follow-up, every broadcast lands where your customer already is, fast and personal, not buried in a queue. WATU exists to make that experience better for them, every single time.</p>
           </div>
         </Reveal>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-6 pb-8">
+        <Reveal className="mb-8">
+          <h2 className="text-2xl font-extrabold tracking-tight md:text-3xl">Need help getting started?</h2>
+        </Reveal>
+        <HelpScrollRow
+          cards={[
+            { tag: "Pricing", tagColor: "bg-[var(--accent)]/12 text-[var(--accent)]", title: "See how pricing works", href: "#pricing" },
+            { tag: "Features", tagColor: "bg-emerald-500/12 text-emerald-600", title: "Explore every feature", href: "#features" },
+            { tag: "Setup", tagColor: "bg-amber-500/12 text-amber-600", title: "See how setup works", href: "#how" },
+            { tag: "FAQ", tagColor: "bg-sky-500/12 text-sky-600", title: "Get your questions answered", href: "#faq" },
+            { tag: "Talk to us", tagColor: "bg-[var(--coral)]/12 text-[var(--coral)]", title: "Book a discovery call", href: "https://calendly.com/india-shine/30min", external: true },
+          ]}
+        />
       </section>
 
       <section id="faq" className="mx-auto max-w-3xl px-6 py-28">
