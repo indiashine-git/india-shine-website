@@ -142,7 +142,10 @@ const FEATURE_TABS = [
     cta: "Explore broadcasts",
     visual: (
       <div className="relative w-full overflow-hidden rounded-xl border border-[var(--border)] shadow-[var(--shadow-lg)]">
-        <Image src="/product/broadcasts.jpg" alt="WATU's real Broadcasts screen" width={1568} height={693} className="w-full" />
+        <Image src="/product/broadcasts.jpg" alt="WATU's real Broadcasts screen" width={1568} height={230} className="w-full" />
+        <span className="absolute right-3 top-3 rounded-full bg-emerald-500 px-2.5 py-1 text-[11px] font-bold text-white shadow-lg">
+          Live delivery tracking
+        </span>
       </div>
     ),
   },
@@ -217,10 +220,16 @@ export default function WatuPage() {
                 src="/product/automations.jpg"
                 alt="WATU's real Automations screen — build workflows that react to WhatsApp events"
                 width={1568}
-                height={693}
+                height={425}
                 className="w-full"
                 priority
               />
+              <div className="pointer-events-none absolute inset-0 hidden md:block">
+                <div className="absolute left-[36%] top-[26%] h-9 w-[210px] rounded-lg border-2 border-[var(--accent)]" />
+                <div className="absolute left-[36%] top-[38%] flex items-center gap-1.5 rounded-full bg-[var(--accent)] px-3 py-1.5 text-xs font-bold text-white shadow-lg">
+                  Zero-code, on by default
+                </div>
+              </div>
             </div>
           </Reveal>
         </div>
