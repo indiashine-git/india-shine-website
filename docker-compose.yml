@@ -1,0 +1,9 @@
+name: india-shine-website
+
+services:
+  web:
+    build:
+      context: .
+    restart: unless-stopped
+    ports:
+      - '127.0.0.1:3002:3000'
