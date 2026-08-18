@@ -1,14 +1,14 @@
 export function Marquee({ items }: { items: string[] }) {
   const tripled = [...items, ...items, ...items];
   return (
-    <div className="overflow-hidden border-y border-[var(--border)] bg-[var(--bg-alt)] py-8">
+    <div className="overflow-hidden border-y border-[var(--border)] bg-[var(--bg-alt)] py-12">
       <div className="flex w-max animate-marquee items-center">
         {tripled.map((item, i) => (
-          <span key={i} className="flex shrink-0 items-center gap-8 whitespace-nowrap pr-8">
-            <span className="text-2xl font-extrabold tracking-tight [-webkit-text-stroke:1.4px_var(--text)] text-transparent md:text-3xl">
+          <span key={i} className="flex shrink-0 items-center gap-12 whitespace-nowrap pr-12">
+            <span className="text-4xl font-extrabold tracking-normal [-webkit-text-stroke:1px_var(--text)] text-transparent md:text-5xl">
               {item}
             </span>
-            <span className="size-2 shrink-0 rounded-full bg-[var(--accent)]" />
+            <span className="size-2.5 shrink-0 rounded-full bg-[var(--accent)]" />
           </span>
         ))}
       </div>

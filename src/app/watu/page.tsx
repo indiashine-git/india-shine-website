@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Bot } from "lucide-react";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
@@ -63,25 +64,6 @@ function KanbanMockup() {
           ))}
         </div>
       ))}
-    </div>
-  );
-}
-
-function BroadcastMockup() {
-  return (
-    <div className="w-full max-w-[380px] rounded-2xl border border-[var(--border)] bg-[var(--card)] p-5 shadow-[var(--shadow-lg)]">
-      <div className="mb-3 flex items-center justify-between text-[11px] font-bold text-[var(--text-muted)]">
-        <span>Diwali Offer — Template</span>
-        <span className="rounded-full bg-emerald-500/15 px-2 py-0.5 text-emerald-600">Sent</span>
-      </div>
-      <div className="grid grid-cols-3 gap-2 text-center">
-        {[["1,204", "Sent"], ["1,180", "Delivered"], ["942", "Read"]].map(([n, l]) => (
-          <div key={l} className="rounded-lg bg-[var(--bg-alt)] py-3">
-            <div className="text-base font-extrabold">{n}</div>
-            <div className="text-[10px] text-[var(--text-muted)]">{l}</div>
-          </div>
-        ))}
-      </div>
     </div>
   );
 }
@@ -158,7 +140,11 @@ const FEATURE_TABS = [
     title: "Reach everyone, without leaving anyone behind",
     body: "Send an approved WhatsApp template to a segmented list, at scale, and watch delivery in real time, no more forwarding a message to a hundred people one at a time.",
     cta: "Explore broadcasts",
-    visual: <BroadcastMockup />,
+    visual: (
+      <div className="relative w-full overflow-hidden rounded-xl border border-[var(--border)] shadow-[var(--shadow-lg)]">
+        <Image src="/product/broadcasts.jpg" alt="WATU's real Broadcasts screen" width={1568} height={693} className="w-full" />
+      </div>
+    ),
   },
   {
     key: "automations",
@@ -224,8 +210,19 @@ export default function WatuPage() {
             </Link>
           </div>
         </div>
-        <div className="relative mx-auto mb-4 max-w-2xl px-6">
-          <Reveal><ChatMockup /></Reveal>
+        <div className="relative mx-auto mb-4 max-w-4xl px-6">
+          <Reveal>
+            <div className="relative overflow-hidden rounded-2xl border border-[var(--border)] shadow-[var(--shadow-lg)]">
+              <Image
+                src="/product/automations.jpg"
+                alt="WATU's real Automations screen — build workflows that react to WhatsApp events"
+                width={1568}
+                height={693}
+                className="w-full"
+                priority
+              />
+            </div>
+          </Reveal>
         </div>
       </section>
 
