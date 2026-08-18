@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { Bot } from "lucide-react";
+import { Bot, ShoppingBag, Building2, Landmark, Stethoscope, GraduationCap, Briefcase } from "lucide-react";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { Reveal } from "@/components/reveal";
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 const NAV_LINKS = [
   { href: "#problem", label: "Why WATU" },
   { href: "#features", label: "Features" },
-  { href: "#how", label: "How it works" },
+  { href: "#pricing", label: "Pricing" },
   { href: "#faq", label: "FAQ" },
   { href: "/#contact", label: "Contact" },
 ];
@@ -343,6 +343,60 @@ export default function WatuPage() {
             </Reveal>
           ))}
         </div>
+      </section>
+
+      <section id="who-its-for" className="mx-auto max-w-6xl px-6 py-28">
+        <Reveal className="mx-auto mb-16 max-w-xl text-center">
+          <h2 className="mb-3.5 text-3xl font-extrabold tracking-tight md:text-[44px]">Built for teams who live on WhatsApp</h2>
+          <p className="text-[var(--text-muted)]">Whatever you sell or support, if your customers reach you on WhatsApp, WATU fits how your team already works.</p>
+        </Reveal>
+        <div className="grid gap-6 md:grid-cols-3">
+          {[
+            { icon: ShoppingBag, name: "E-commerce & D2C", body: "Answer product questions, recover abandoned carts, and send order updates without leaving the chat." },
+            { icon: Building2, name: "Real Estate", body: "Qualify leads, share listings, and keep every buyer conversation organized by deal stage." },
+            { icon: Landmark, name: "Financial Services", body: "Route inquiries to the right agent, automate KYC follow-ups, and keep a clean record of every conversation." },
+            { icon: Stethoscope, name: "Healthcare & Clinics", body: "Confirm appointments, send reminders, and let patients reach you without a phone queue." },
+            { icon: GraduationCap, name: "Education", body: "Handle admissions questions, share updates with parents, and follow up on enrollments automatically." },
+            { icon: Briefcase, name: "Agencies & Services", body: "Manage every client conversation and handoff in one shared inbox, across your whole team." },
+          ].map((u, i) => (
+            <Reveal key={u.name} delay={(i % 3) * 0.08}>
+              <div className="h-full rounded-2xl border border-[var(--border)] bg-[var(--card)] p-6 shadow-sm">
+                <div className="mb-4 flex size-10 items-center justify-center rounded-[10px] bg-[var(--accent)]/12 text-[var(--accent)]">
+                  <u.icon size={20} />
+                </div>
+                <h3 className="mb-2 text-[16.5px] font-bold">{u.name}</h3>
+                <p className="text-sm text-[var(--text-muted)]">{u.body}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      <section id="pricing" className="mx-auto max-w-4xl px-6 py-28">
+        <Reveal className="mx-auto mb-16 max-w-xl text-center">
+          <h2 className="mb-3.5 text-3xl font-extrabold tracking-tight md:text-[44px]">Simple pricing, built around your team</h2>
+          <p className="text-[var(--text-muted)]">No per-message surprises. We price around how your team actually uses WATU, not a rigid tier that never quite fits.</p>
+        </Reveal>
+        <Reveal>
+          <div
+            className="rounded-[24px] border border-[var(--border)] p-10 text-center md:p-14"
+            style={{ background: "linear-gradient(135deg, color-mix(in srgb, var(--accent) 10%, var(--bg-alt)), var(--bg-alt))" }}
+          >
+            <h3 className="mb-3 text-2xl font-bold">Talk to us about your team</h3>
+            <p className="mx-auto mb-8 max-w-lg text-[15px] text-[var(--text-muted)]">
+              Tell us your team size and how you plan to use WATU on a quick call, and we&apos;ll give you a
+              straightforward number, no sales runaround.
+            </p>
+            <a
+              href="https://calendly.com/india-shine/30min"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="inline-block rounded-xl bg-[image:var(--hero-gradient)] px-7 py-3.5 text-[15.5px] font-bold text-white shadow-[0_10px_30px_-8px_rgba(124,58,237,0.55)]"
+            >
+              Get pricing on a call
+            </a>
+          </div>
+        </Reveal>
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-28">
