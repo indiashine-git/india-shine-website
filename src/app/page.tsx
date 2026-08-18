@@ -59,7 +59,7 @@ export default function Home() {
       <SiteNav brandHref="/" brandMark="I" brandLabel="India-Shine" links={NAV_LINKS} />
 
       {/* Hero */}
-      <section className="dotted-bg relative overflow-hidden pt-24 text-center">
+      <section className="dotted-bg relative overflow-hidden pt-32 text-center">
         <div className="pointer-events-none absolute -inset-x-10 -top-40 h-[620px] bg-[image:var(--hero-gradient)] opacity-[0.14] blur-[60px] dark:opacity-[0.28]" />
         <div className="relative mx-auto max-w-4xl px-6">
           <span className="mb-7 inline-block rounded-full bg-[var(--accent)]/12 px-4 py-1.5 text-xs font-bold tracking-wider text-[var(--accent)] uppercase">
@@ -72,7 +72,7 @@ export default function Home() {
             <br />
             businesses.</span>
           </h1>
-          <p className="mx-auto mb-10 max-w-xl text-lg text-[var(--text-muted)]">
+          <p className="mx-auto mb-12 max-w-xl text-lg text-[var(--text-muted)]">
             A technology company that ships products, not pitch decks. We build the tools we&apos;d want to run our
             own business on, then put them in the hands of teams that need them, wherever in the world they&apos;re
             based.
@@ -121,8 +121,8 @@ export default function Home() {
       <Marquee items={["UNITED STATES", "UNITED KINGDOM", "SRI LANKA", "BRAZIL", "INDIA"]} />
 
       {/* Approach */}
-      <section id="approach" className="mx-auto max-w-6xl px-6 py-20">
-        <Reveal className="mx-auto mb-13 max-w-xl text-center">
+      <section id="approach" className="mx-auto max-w-6xl px-6 py-28">
+        <Reveal className="mx-auto mb-16 max-w-xl text-center">
           <h2 className="mb-3.5 text-3xl font-extrabold tracking-tight md:text-[44px]">Our approach</h2>
           <p className="text-[var(--text-muted)]">Most software gets built for a demo. We build for what happens after someone actually signs up.</p>
         </Reveal>
@@ -167,12 +167,12 @@ export default function Home() {
       </div>
 
       {/* Services */}
-      <section id="services" className="mx-auto max-w-6xl px-6 py-20">
-        <Reveal className="mx-auto mb-13 max-w-xl text-center">
+      <section id="services" className="mx-auto max-w-6xl px-6 py-28">
+        <Reveal className="mx-auto mb-16 max-w-xl text-center">
           <h2 className="mb-3.5 text-3xl font-extrabold tracking-tight md:text-[44px]">What we do</h2>
           <p className="text-[var(--text-muted)]">Beyond WATU, we take on custom work for teams that need software built around how they actually operate.</p>
         </Reveal>
-        <div className="grid gap-4.5 gap-y-5 md:grid-cols-3">
+        <div className="grid gap-6 gap-y-6 md:grid-cols-3">
           {SERVICES.map((s, i) => (
             <Reveal key={s.title} delay={(i % 3) * 0.08}>
               <div className="h-full rounded-[14px] border border-[var(--border)] bg-[var(--card)] p-6 shadow-sm transition-all hover:-translate-y-0.5 hover:border-[var(--accent)]/35">
@@ -188,16 +188,16 @@ export default function Home() {
       </section>
 
       {/* Flagship products */}
-      <section id="products" className="mx-auto max-w-6xl px-6 py-20">
-        <Reveal className="mx-auto mb-13 max-w-xl text-center">
+      <section id="products" className="mx-auto max-w-6xl px-6 py-28">
+        <Reveal className="mx-auto mb-16 max-w-xl text-center">
           <h2 className="mb-3.5 text-3xl font-extrabold tracking-tight md:text-[44px]">Our flagship products</h2>
           <p className="text-[var(--text-muted)]">What we&apos;ve built and run in production ourselves.</p>
         </Reveal>
-        <div className="grid gap-5 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2">
           <Reveal>
             <Link
               href="/watu"
-              className="flex h-full flex-col gap-5 rounded-[18px] border border-[var(--border)] bg-[var(--card)] p-7 shadow-[var(--shadow-lg)] transition-transform hover:-translate-y-1"
+              className="flex h-full flex-col gap-6 rounded-[18px] border border-[var(--border)] bg-[var(--card)] p-7 shadow-[var(--shadow-lg)] transition-transform hover:-translate-y-1"
             >
               <div className="flex size-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[var(--accent)] to-[var(--coral)] text-xl font-extrabold text-white">
                 W
@@ -219,7 +219,7 @@ export default function Home() {
             </Link>
           </Reveal>
           <Reveal delay={0.08}>
-            <div className="flex h-full flex-col gap-5 rounded-[18px] border border-[var(--border)] bg-[var(--card)] p-7 shadow-[var(--shadow-lg)]">
+            <div className="flex h-full flex-col gap-6 rounded-[18px] border border-[var(--border)] bg-[var(--card)] p-7 shadow-[var(--shadow-lg)]">
               <div className="flex size-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[var(--mint,#14b8a6)] to-[var(--accent)] text-xl font-extrabold text-white">
                 F
               </div>
@@ -243,12 +243,12 @@ export default function Home() {
       </section>
 
       {/* Upcoming products */}
-      <section id="upcoming" className="mx-auto max-w-6xl px-6 py-20">
-        <Reveal className="mx-auto mb-13 max-w-xl text-center">
+      <section id="upcoming" className="mx-auto max-w-6xl px-6 py-28">
+        <Reveal className="mx-auto mb-16 max-w-xl text-center">
           <h2 className="mb-3.5 text-3xl font-extrabold tracking-tight md:text-[44px]">Upcoming products</h2>
           <p className="text-[var(--text-muted)]">What we&apos;re building next.</p>
         </Reveal>
-        <div className="grid gap-4.5 gap-y-5 md:grid-cols-3">
+        <div className="grid gap-6 gap-y-6 md:grid-cols-3">
           {[
             { icon: Share2, name: "Buzzr", sub: "Social Media Automation", body: "Plan, schedule, and manage content across social channels from one place, built with the same directness as everything else we ship." },
             { icon: MessageSquare, name: "OneBox", sub: "Unified inbox", body: "One inbox for every message: social media (Facebook, Instagram), WhatsApp, Telegram, and more, all in a single shared view." },
@@ -270,12 +270,12 @@ export default function Home() {
       </section>
 
       {/* Why us */}
-      <section id="why" className="mx-auto max-w-6xl px-6 py-20">
-        <Reveal className="mx-auto mb-13 max-w-xl text-center">
+      <section id="why" className="mx-auto max-w-6xl px-6 py-28">
+        <Reveal className="mx-auto mb-16 max-w-xl text-center">
           <h2 className="mb-3.5 text-3xl font-extrabold tracking-tight md:text-[44px]">Why work with us</h2>
           <p className="text-[var(--text-muted)]">Six things that make us different from a typical software vendor.</p>
         </Reveal>
-        <div className="grid gap-4.5 gap-y-5 md:grid-cols-3">
+        <div className="grid gap-6 gap-y-6 md:grid-cols-3">
           {WHY_US.map((s, i) => (
             <Reveal key={s.title} delay={(i % 3) * 0.08}>
               <div className="h-full rounded-[14px] border border-[var(--border)] bg-[var(--card)] p-6 shadow-sm">
@@ -290,7 +290,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about" className="mx-auto max-w-6xl px-6 py-20">
+      <section id="about" className="mx-auto max-w-6xl px-6 py-28">
         <Reveal className="mx-auto max-w-2xl text-center">
           <h2 className="mb-3.5 text-3xl font-extrabold tracking-tight md:text-[44px]">About us</h2>
           <p className="text-[var(--text-muted)]">
@@ -304,7 +304,7 @@ export default function Home() {
       </section>
 
       {/* Contact CTA */}
-      <section id="contact" className="mx-auto max-w-6xl px-6 py-20">
+      <section id="contact" className="mx-auto max-w-6xl px-6 py-28">
         <Reveal>
           <div
             className="rounded-[20px] border border-[var(--border)] p-12 text-center"

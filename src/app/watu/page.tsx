@@ -195,7 +195,7 @@ export default function WatuPage() {
     <>
       <SiteNav brandHref="/watu" brandMark="W" brandLabel="WATU by India-Shine" links={NAV_LINKS} />
 
-      <section className="dotted-bg relative overflow-hidden pt-24 text-center">
+      <section className="dotted-bg relative overflow-hidden pt-32 text-center">
         <div className="pointer-events-none absolute -inset-x-10 -top-40 h-[620px] bg-[image:var(--hero-gradient)] opacity-[0.14] blur-[60px] dark:opacity-[0.28]" />
         <div className="relative mx-auto max-w-4xl px-6">
           <span className="mb-7 inline-block rounded-full bg-[var(--accent)]/12 px-4 py-1.5 text-xs font-bold tracking-wider text-[var(--accent)] uppercase">
@@ -206,7 +206,7 @@ export default function WatuPage() {
             <br />
             <span className="gradient-text">run like a real business.</span>
           </h1>
-          <p className="mx-auto mb-10 max-w-xl text-lg text-[var(--text-muted)]">
+          <p className="mx-auto mb-12 max-w-xl text-lg text-[var(--text-muted)]">
             WATU turns a single WhatsApp Business number into a shared inbox, a sales pipeline, and an automation
             engine, connected directly to Meta&apos;s official Cloud API under your own WhatsApp Business Account.
           </p>
@@ -242,8 +242,8 @@ export default function WatuPage() {
         </Reveal>
       </div>
 
-      <section id="problem" className="mx-auto max-w-6xl px-6 py-20">
-        <Reveal className="mx-auto mb-13 max-w-xl text-center">
+      <section id="problem" className="mx-auto max-w-6xl px-6 py-28">
+        <Reveal className="mx-auto mb-16 max-w-xl text-center">
           <h2 className="mb-3.5 text-3xl font-extrabold tracking-tight md:text-[44px]">WhatsApp works. Managing it as a team doesn&apos;t.</h2>
           <p className="text-[var(--text-muted)]">Most businesses that grow past one person on WhatsApp hit the same wall.</p>
         </Reveal>
@@ -272,8 +272,8 @@ export default function WatuPage() {
       </section>
 
       {/* Feature carousel — Miro-style horizontal scroll */}
-      <section id="features" className="mx-auto max-w-6xl px-6 py-20">
-        <Reveal className="mx-auto mb-13 max-w-xl text-center">
+      <section id="features" className="mx-auto max-w-6xl px-6 py-28">
+        <Reveal className="mx-auto mb-16 max-w-xl text-center">
           <h2 className="mb-3.5 text-3xl font-extrabold tracking-tight md:text-[44px]">Everything your team needs</h2>
           <p className="text-[var(--text-muted)]">Six systems that work off the same conversation, the same contact, the same source of truth.</p>
         </Reveal>
@@ -287,8 +287,8 @@ export default function WatuPage() {
         </PullQuote>
       </div>
 
-      <section id="how" className="mx-auto max-w-6xl px-6 py-20">
-        <Reveal className="mx-auto mb-13 max-w-xl text-center">
+      <section id="how" className="mx-auto max-w-6xl px-6 py-28">
+        <Reveal className="mx-auto mb-16 max-w-xl text-center">
           <h2 className="mb-3.5 text-3xl font-extrabold tracking-tight md:text-[44px]">How it works</h2>
           <p className="text-[var(--text-muted)]">From an existing WhatsApp Business number to a working shared inbox, in three steps.</p>
         </Reveal>
@@ -307,8 +307,8 @@ export default function WatuPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-20">
-        <Reveal className="mx-auto mb-13 max-w-xl text-center">
+      <section className="mx-auto max-w-6xl px-6 py-28">
+        <Reveal className="mx-auto mb-16 max-w-xl text-center">
           <h2 className="mb-3.5 text-3xl font-extrabold tracking-tight md:text-[44px]">Your customers are on WhatsApp. WATU is how you run it like a business.</h2>
           <p className="text-[var(--text-muted)]">Most WhatsApp CRM tools bolt on a generic reseller layer between you and your customers. WATU is the system that makes WhatsApp actually work for your team, end to end.</p>
         </Reveal>
@@ -324,8 +324,8 @@ export default function WatuPage() {
         </Reveal>
       </section>
 
-      <section id="faq" className="mx-auto max-w-3xl px-6 py-20">
-        <Reveal className="mx-auto mb-13 text-center">
+      <section id="faq" className="mx-auto max-w-3xl px-6 py-28">
+        <Reveal className="mx-auto mb-16 text-center">
           <h2 className="text-3xl font-extrabold tracking-tight md:text-[44px]">Frequently asked</h2>
         </Reveal>
         <div className="divide-y divide-[var(--border)]">

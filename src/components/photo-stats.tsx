@@ -10,7 +10,7 @@ interface PhotoStat {
 
 export function PhotoStats({ stats }: { stats: PhotoStat[] }) {
   return (
-    <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+    <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
       {stats.map((s, i) => (
         <Reveal key={s.label} delay={i * 0.08}>
           <div className="relative aspect-[4/3] overflow-hidden rounded-[20px] shadow-[var(--shadow-lg)]">
