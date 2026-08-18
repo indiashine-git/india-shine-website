@@ -8,6 +8,9 @@ import { Reveal } from "@/components/reveal";
 import { PullQuote } from "@/components/pull-quote";
 import { FeatureSpotlight } from "@/components/feature-spotlight";
 import { HelpScrollRow } from "@/components/help-scroll-row";
+import { CountUp } from "@/components/count-up";
+import { StaggerGrid, StaggerItem } from "@/components/stagger-grid";
+import { ParallaxHeroBg } from "@/components/parallax-hero-bg";
 
 export const metadata: Metadata = {
   title: "WATU — WhatsApp CRM by India-Shine",
@@ -235,7 +238,9 @@ export default function WatuPage() {
       <SiteNav brandHref="/watu" brandMark="W" brandLabel="WATU by India-Shine" links={NAV_LINKS} />
 
       <section className="dotted-bg relative overflow-hidden pt-32 text-center">
-        <div className="pointer-events-none absolute -inset-x-10 -top-40 h-[620px] bg-[image:var(--hero-gradient)] opacity-[0.14] blur-[60px] dark:opacity-[0.28]" />
+        <ParallaxHeroBg>
+          <div className="pointer-events-none absolute -inset-x-10 -top-40 h-[620px] bg-[image:var(--hero-gradient)] opacity-[0.14] blur-[60px] dark:opacity-[0.28]" />
+        </ParallaxHeroBg>
         <div className="relative mx-auto max-w-4xl px-6">
           <span className="mb-7 inline-block rounded-full bg-[var(--accent)]/12 px-4 py-1.5 text-xs font-bold tracking-wider text-[var(--accent)] uppercase">
             WATU by India-Shine
@@ -271,12 +276,21 @@ export default function WatuPage() {
       <div className="mx-auto max-w-5xl px-6 py-14">
         <Reveal>
           <div className="grid grid-cols-2 gap-6 text-center md:grid-cols-4">
-            {[["1", "Shared inbox for the whole team"], ["0", "Conversations lost between teammates"], ["24/7", "Automations working for you"], ["∞", "Team members, one number"]].map(([n, l]) => (
-              <div key={l}>
-                <div className="gradient-text text-4xl font-extrabold md:text-5xl">{n}</div>
-                <div className="mt-2.5 text-[13px] text-[var(--text-muted)]">{l}</div>
-              </div>
-            ))}
+            {[["1", "Shared inbox for the whole team"], ["0", "Conversations lost between teammates"], ["24/7", "Automations working for you"], ["∞", "Team members, one number"]].map(([n, l]) => {
+              const match = n.match(/^(\d+)$/);
+              return (
+                <div key={l}>
+                  <div className="text-4xl font-extrabold md:text-5xl">
+                    {match ? (
+                      <CountUp value={Number(match[1])} className="gradient-text" />
+                    ) : (
+                      <span className="gradient-text">{n}</span>
+                    )}
+                  </div>
+                  <div className="mt-2.5 text-[13px] text-[var(--text-muted)]">{l}</div>
+                </div>
+              );
+            })}
           </div>
         </Reveal>
       </div>
@@ -351,7 +365,7 @@ export default function WatuPage() {
           <h2 className="mb-3.5 text-3xl font-extrabold tracking-tight md:text-[44px]">Built for teams who live on WhatsApp</h2>
           <p className="text-[var(--text-muted)]">Whatever you sell or support, if your customers reach you on WhatsApp, WATU fits how your team already works.</p>
         </Reveal>
-        <div className="grid gap-6 md:grid-cols-3">
+        <StaggerGrid className="grid gap-6 md:grid-cols-3">
           {[
             { icon: ShoppingBag, name: "E-commerce & D2C", body: "Answer product questions, recover abandoned carts, and send order updates without leaving the chat." },
             { icon: Building2, name: "Real Estate", body: "Qualify leads, share listings, and keep every buyer conversation organized by deal stage." },
@@ -359,8 +373,8 @@ export default function WatuPage() {
             { icon: Stethoscope, name: "Healthcare & Clinics", body: "Confirm appointments, send reminders, and let patients reach you without a phone queue." },
             { icon: GraduationCap, name: "Education", body: "Handle admissions questions, share updates with parents, and follow up on enrollments automatically." },
             { icon: Briefcase, name: "Agencies & Services", body: "Manage every client conversation and handoff in one shared inbox, across your whole team." },
-          ].map((u, i) => (
-            <Reveal key={u.name} delay={(i % 3) * 0.08}>
+          ].map((u) => (
+            <StaggerItem key={u.name}>
               <div className="h-full rounded-2xl border border-[var(--border)] bg-[var(--card)] p-6 shadow-sm">
                 <div className="mb-4 flex size-10 items-center justify-center rounded-[10px] bg-[var(--accent)]/12 text-[var(--accent)]">
                   <u.icon size={20} />
@@ -368,9 +382,9 @@ export default function WatuPage() {
                 <h3 className="mb-2 text-[16.5px] font-bold">{u.name}</h3>
                 <p className="text-sm text-[var(--text-muted)]">{u.body}</p>
               </div>
-            </Reveal>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerGrid>
       </section>
 
       <section id="pricing" className="mx-auto max-w-4xl px-6 py-28">
