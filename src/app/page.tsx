@@ -15,6 +15,10 @@ import {
   MessageSquare,
   Bot,
   Share2,
+  Users,
+  FileSignature,
+  UserPlus,
+  Route,
 } from "lucide-react";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
@@ -56,7 +60,7 @@ const WHY_US = [
 export default function Home() {
   return (
     <>
-      <SiteNav brandHref="/" brandMark="I" brandLabel="India-Shine" links={NAV_LINKS} />
+      <SiteNav brandHref="/" brandLabel="India-Shine" links={NAV_LINKS} />
 
       {/* Hero */}
       <section className="dotted-bg relative overflow-hidden pt-32 text-center">
@@ -193,52 +197,93 @@ export default function Home() {
           <h2 className="mb-3.5 text-3xl font-extrabold tracking-tight md:text-[44px]">Our flagship products</h2>
           <p className="text-[var(--text-muted)]">What we&apos;ve built and run in production ourselves.</p>
         </Reveal>
-        <div className="grid gap-6 md:grid-cols-2">
-          <Reveal>
-            <Link
-              href="/watu"
-              className="flex h-full flex-col gap-6 rounded-[18px] border border-[var(--border)] bg-[var(--card)] p-7 shadow-[var(--shadow-lg)] transition-transform hover:-translate-y-1"
-            >
-              <div className="flex size-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[var(--accent)] to-[var(--coral)] text-xl font-extrabold text-white">
-                W
-              </div>
-              <div>
-                <h3 className="mb-1.5 text-lg font-bold">WATU — WhatsApp CRM</h3>
-                <p className="mb-3.5 text-[14.5px] text-[var(--text-muted)]">
-                  A WhatsApp CRM built for your team and your customers: shared inbox, contacts, sales pipelines,
-                  broadcasts, no-code automations, and AI agents.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {["Shared Inbox", "Pipelines", "Automations", "Broadcasts", "AI Agents"].map((p) => (
-                    <span key={p} className="rounded-full border border-[var(--border)] px-2.5 py-1 text-xs text-[var(--text-muted)]">
-                      {p}
-                    </span>
-                  ))}
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {[
+            {
+              icon: MessageSquare,
+              name: "WATU",
+              sub: "WhatsApp CRM",
+              body: "A WhatsApp CRM built for your team and your customers: shared inbox, contacts, sales pipelines, broadcasts, no-code automations, and AI agents.",
+              tags: ["Shared Inbox", "Pipelines", "Automations", "Broadcasts", "AI Agents"],
+              knowMoreHref: "/watu",
+            },
+            {
+              icon: Users,
+              name: "ClientIQ",
+              sub: "CRM",
+              body: "The same CRM we run our own client relationships on at crm.intellix.in, now available to your business: contacts, deals, pipelines, and team collaboration in one place.",
+              tags: ["Contacts", "Deals", "Pipelines", "Team collaboration"],
+              knowMoreHref: "mailto:info@india-shine.com?subject=ClientIQ%20-%20know%20more",
+            },
+            {
+              icon: Share2,
+              name: "BuzzIQ",
+              sub: "Social Media Automation",
+              body: "Plan, schedule, and manage content across social channels from one place, built with the same directness as everything else we ship.",
+              tags: ["Scheduling", "Multi-channel", "Analytics"],
+              knowMoreHref: "mailto:info@india-shine.com?subject=BuzzIQ%20-%20know%20more",
+            },
+            {
+              icon: FileSignature,
+              name: "SignIQ",
+              sub: "eSigning",
+              body: "Send, sign, and track documents digitally, from offer letters to vendor contracts, without the back-and-forth of printing and scanning.",
+              tags: ["Digital signatures", "Audit trail", "Templates"],
+              knowMoreHref: "mailto:info@india-shine.com?subject=SignIQ%20-%20know%20more",
+            },
+            {
+              icon: UserPlus,
+              name: "OnboardIQ",
+              sub: "Customer Onboarding",
+              body: "Turn new customers into active ones faster, with guided onboarding flows, document collection, and progress tracking built in.",
+              tags: ["Guided flows", "Document collection", "Progress tracking"],
+              knowMoreHref: "mailto:info@india-shine.com?subject=OnboardIQ%20-%20know%20more",
+            },
+            {
+              icon: Route,
+              name: "JourneyIQ",
+              sub: "Customer Lifecycle Management",
+              body: "Track every customer from first contact to renewal, with the full journey, touchpoints, and health signals in one end-to-end view.",
+              tags: ["Lifecycle stages", "Health signals", "Renewals"],
+              knowMoreHref: "mailto:info@india-shine.com?subject=JourneyIQ%20-%20know%20more",
+            },
+          ].map((prod, i) => (
+            <Reveal key={prod.name} delay={i * 0.06}>
+              <div className="flex h-full flex-col gap-6 rounded-[18px] border border-[var(--border)] bg-[var(--card)] p-7 shadow-[var(--shadow-lg)] transition-transform hover:-translate-y-1">
+                <div className="flex size-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[var(--accent)] to-[var(--coral)] text-white">
+                  <prod.icon size={24} />
+                </div>
+                <div className="flex-1">
+                  <h3 className="mb-0.5 text-lg font-bold">{prod.name}</h3>
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-[var(--accent)]">{prod.sub}</p>
+                  <p className="mb-3.5 text-[14.5px] text-[var(--text-muted)]">{prod.body}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {prod.tags.map((t) => (
+                      <span key={t} className="rounded-full border border-[var(--border)] px-2.5 py-1 text-xs text-[var(--text-muted)]">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <div className="flex gap-3 border-t border-[var(--border)] pt-5">
+                  <Link
+                    href={prod.knowMoreHref}
+                    className="flex-1 rounded-full border border-[var(--border)] px-4 py-2 text-center text-sm font-semibold hover:bg-[var(--card-hover,var(--border))] transition-colors"
+                  >
+                    Know more
+                  </Link>
+                  <a
+                    href="https://calendly.com/india-shine/30min"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="flex-1 rounded-full bg-[var(--accent)] px-4 py-2 text-center text-sm font-semibold text-white hover:opacity-90 transition-opacity"
+                  >
+                    Connect
+                  </a>
                 </div>
               </div>
-            </Link>
-          </Reveal>
-          <Reveal delay={0.08}>
-            <div className="flex h-full flex-col gap-6 rounded-[18px] border border-[var(--border)] bg-[var(--card)] p-7 shadow-[var(--shadow-lg)]">
-              <div className="flex size-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[var(--mint,#14b8a6)] to-[var(--accent)] text-xl font-extrabold text-white">
-                F
-              </div>
-              <div>
-                <h3 className="mb-1.5 text-lg font-bold">FlowIQ — AI Workflow Automation</h3>
-                <p className="mb-3.5 text-[14.5px] text-[var(--text-muted)]">
-                  The workflow automation engine we build for clients: maps your team&apos;s manual steps and
-                  automates them, from lead routing to internal approvals.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {["Visual builder", "AI-assisted rules", "Integrations"].map((p) => (
-                    <span key={p} className="rounded-full border border-[var(--border)] px-2.5 py-1 text-xs text-[var(--text-muted)]">
-                      {p}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </Reveal>
+            </Reveal>
+          ))}
         </div>
       </section>
 
@@ -248,9 +293,8 @@ export default function Home() {
           <h2 className="mb-3.5 text-3xl font-extrabold tracking-tight md:text-[44px]">Upcoming products</h2>
           <p className="text-[var(--text-muted)]">What we&apos;re building next.</p>
         </Reveal>
-        <div className="grid gap-6 gap-y-6 md:grid-cols-3">
+        <div className="grid gap-6 gap-y-6 md:grid-cols-2">
           {[
-            { icon: Share2, name: "Buzzr", sub: "Social Media Automation", body: "Plan, schedule, and manage content across social channels from one place, built with the same directness as everything else we ship." },
             { icon: MessageSquare, name: "OneBox", sub: "Unified inbox", body: "One inbox for every message: social media (Facebook, Instagram), WhatsApp, Telegram, and more, all in a single shared view." },
             { icon: Target, name: "PulseReach", sub: "Marketing Automation Platform", body: "A standalone tool for campaigns, segmentation, and journeys that run themselves, the product version of the service we already offer today." },
           ].map((p, i) => (

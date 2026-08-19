@@ -235,7 +235,7 @@ const FEATURE_TABS = [
 export default function WatuPage() {
   return (
     <>
-      <SiteNav brandHref="/watu" brandMark="W" brandLabel="WATU by India-Shine" links={NAV_LINKS} />
+      <SiteNav brandHref="/watu" brandLabel="WATU by India-Shine" links={NAV_LINKS} />
 
       <section className="dotted-bg relative overflow-hidden pt-32 text-center">
         <ParallaxHeroBg>

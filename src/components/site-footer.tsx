@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 interface FooterCol {
@@ -18,9 +19,7 @@ export function SiteFooter({
         <div className="flex flex-wrap justify-between gap-12 pb-14">
           <div className="max-w-[300px]">
             <div className="mb-4 flex items-center gap-2.5">
-              <span className="flex size-8 items-center justify-center rounded-lg bg-gradient-to-br from-[var(--accent)] to-[var(--coral)] text-sm font-extrabold text-white">
-                I
-              </span>
+              <Image src="/logo.png" alt="India-Shine" width={32} height={32} className="size-8" />
               <span className="text-lg font-bold text-[#f4f4f8]">India-Shine</span>
             </div>
             <p className="mb-5 text-sm leading-relaxed text-[#7c7c8e]">{blurb}</p>

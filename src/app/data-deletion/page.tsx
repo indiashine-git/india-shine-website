@@ -12,7 +12,7 @@ const NAV_LINKS = [
 export default function DataDeletion() {
   return (
     <>
-      <SiteNav brandHref="/" brandMark="I" brandLabel="India-Shine" links={NAV_LINKS} />
+      <SiteNav brandHref="/" brandLabel="India-Shine" links={NAV_LINKS} />
       <section className="mx-auto max-w-2xl px-6 py-16">
         <h1 className="mb-2 text-3xl font-extrabold">Data Deletion</h1>
         <p className="mb-8 text-sm text-[var(--text-muted)]">Last updated: August 2026</p>

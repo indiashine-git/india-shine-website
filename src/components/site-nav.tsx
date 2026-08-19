@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ThemeToggle } from "@/components/theme-toggle";
 
@@ -8,12 +9,10 @@ interface NavLink {
 
 export function SiteNav({
   brandHref,
-  brandMark,
   brandLabel,
   links,
 }: {
   brandHref: string;
-  brandMark: string;
   brandLabel: string;
   links: NavLink[];
 }) {
@@ -21,9 +20,7 @@ export function SiteNav({
     <header className="sticky top-0 z-20 border-b border-[var(--border)] bg-[var(--bg)]/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link href={brandHref} className="flex items-center gap-2.5 text-[17px] font-bold tracking-tight">
-          <span className="flex size-7 items-center justify-center rounded-lg bg-gradient-to-br from-[var(--accent)] to-[var(--coral)] text-sm font-extrabold text-white">
-            {brandMark}
-          </span>
+          <Image src="/logo.png" alt={brandLabel} width={28} height={28} className="size-7" />
           {brandLabel}
         </Link>
         <nav className="flex items-center gap-7 text-sm text-[var(--text-muted)]">
