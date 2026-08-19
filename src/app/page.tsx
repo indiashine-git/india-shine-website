@@ -205,47 +205,41 @@ export default function Home() {
               sub: "WhatsApp CRM",
               body: "A WhatsApp CRM built for your team and your customers: shared inbox, contacts, sales pipelines, broadcasts, no-code automations, and AI agents.",
               tags: ["Shared Inbox", "Pipelines", "Automations", "Broadcasts", "AI Agents"],
-              knowMoreHref: "/watu",
             },
             {
               icon: Users,
-              name: "ClientIQ",
+              name: "Orbit",
               sub: "CRM",
-              body: "The same CRM we run our own client relationships on at crm.intellix.in, now available to your business: contacts, deals, pipelines, and team collaboration in one place.",
+              body: "The CRM we run our own client relationships on, now available to your business: contacts, deals, pipelines, and team collaboration in one place.",
               tags: ["Contacts", "Deals", "Pipelines", "Team collaboration"],
-              knowMoreHref: "mailto:info@india-shine.com?subject=ClientIQ%20-%20know%20more",
             },
             {
               icon: Share2,
-              name: "BuzzIQ",
+              name: "Buzzr",
               sub: "Social Media Automation",
               body: "Plan, schedule, and manage content across social channels from one place, built with the same directness as everything else we ship.",
               tags: ["Scheduling", "Multi-channel", "Analytics"],
-              knowMoreHref: "mailto:info@india-shine.com?subject=BuzzIQ%20-%20know%20more",
             },
             {
               icon: FileSignature,
-              name: "SignIQ",
+              name: "SignIt",
               sub: "eSigning",
               body: "Send, sign, and track documents digitally, from offer letters to vendor contracts, without the back-and-forth of printing and scanning.",
               tags: ["Digital signatures", "Audit trail", "Templates"],
-              knowMoreHref: "mailto:info@india-shine.com?subject=SignIQ%20-%20know%20more",
             },
             {
               icon: UserPlus,
-              name: "OnboardIQ",
+              name: "Onboardr",
               sub: "Customer Onboarding",
               body: "Turn new customers into active ones faster, with guided onboarding flows, document collection, and progress tracking built in.",
               tags: ["Guided flows", "Document collection", "Progress tracking"],
-              knowMoreHref: "mailto:info@india-shine.com?subject=OnboardIQ%20-%20know%20more",
             },
             {
               icon: Route,
-              name: "JourneyIQ",
+              name: "Loopr",
               sub: "Customer Lifecycle Management",
               body: "Track every customer from first contact to renewal, with the full journey, touchpoints, and health signals in one end-to-end view.",
               tags: ["Lifecycle stages", "Health signals", "Renewals"],
-              knowMoreHref: "mailto:info@india-shine.com?subject=JourneyIQ%20-%20know%20more",
             },
           ].map((prod, i) => (
             <Reveal key={prod.name} delay={i * 0.06}>
@@ -266,12 +260,14 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="flex gap-3 border-t border-[var(--border)] pt-5">
-                  <Link
-                    href={prod.knowMoreHref}
+                  <a
+                    href={`https://wa.me/919993322211?text=${encodeURIComponent(`Hi, I'd like to know more about ${prod.name}.`)}`}
+                    target="_blank"
+                    rel="noreferrer noopener"
                     className="flex-1 rounded-full border border-[var(--border)] px-4 py-2 text-center text-sm font-semibold hover:bg-[var(--card-hover,var(--border))] transition-colors"
                   >
                     Know more
-                  </Link>
+                  </a>
                   <a
                     href="https://calendly.com/india-shine/30min"
                     target="_blank"
